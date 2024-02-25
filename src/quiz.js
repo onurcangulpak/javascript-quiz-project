@@ -28,8 +28,6 @@ class Quiz {
     return this.questions;
   }
 
-
-
   checkAnswer(answer) {
     if (answer) {
       return this.correctAnswers++;
@@ -43,37 +41,27 @@ class Quiz {
     }
   }
 
-  filterQuestionsByDifficulty (difficulty) {
-     if (difficulty >=1 && difficulty <=3){
-      const filterQuestions=this.questions.filter(question => 
-        question.difficulty === difficulty);
-        this.questions= filterQuestions;
-     }
+  filterQuestionsByDifficulty(difficulty) {
+    if (difficulty >= 1 && difficulty <= 3) {
+      const filterQuestions = this.questions.filter(
+        (question) => question.difficulty === difficulty
+      );
+      this.questions = filterQuestions;
+    }
     //  return filterQuestions
   }
 
-  
-  averageDifficulty () {
-    const total=this.questions.reduce((accumulator, currentElement) => 
-    accumulator+currentElement.difficulty ,0) 
-    return total/this.questions.length
+  averageDifficulty() {
+    const total = this.questions.reduce(
+      (accumulator, currentElement) => accumulator + currentElement.difficulty,
+      0
+    );
+    return total / this.questions.length;
   }
 
   // averageDifficulty() {
   //   let sumOfDifficulty = this.questions.reduce((acc, currentQuestion) => acc + currentQuestion.difficulty, 0)
-    
+
   //   return Math.round(sumOfDifficulty / this.questions.length)
   // }
-
 }
-
-
-
-
-
-
-
-
-
-
-
